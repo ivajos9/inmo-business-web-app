@@ -1,0 +1,40 @@
+<div *ngIf="clients?.length > 0;else noClients" class="col-lg-10 col-lg-offset-1">
+  <div class="jumbotron">
+    <h3>{{title}}</h3>
+
+    <table class="table table-striped">
+      <thead >
+      <tr>
+        <th scope="col">Nombres</th>
+        <th scope="col">Apellidos</th>
+        <th scope="col">E-Mail</th>
+        <th scope="col">Telefono Movil</th>
+        <th scope="col">Nit</th>
+        <th scope="col">Acciones</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let client of clients">
+        <td>{{client.names}}</td>
+        <td>{{client.lastNames}}</td>
+        <td>{{client.email}}</td>
+        <td>{{client.mobilePhone}}</td>
+        <td>{{client.nit}}</td>
+        <td ><a href="#" class="secondary-content">
+          <i (click)="deleteClient($event, client)" class="fa fa-trash"></i>
+          <i (click)="editTask($event, client)" class="fa fa-pencil"></i>
+        </a>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<ng-template #noClients>
+  <div class="col-lg-10 col-lg-offset-1">
+    <div class="jumbotron">
+      <h3>No hay clientes disponibles...</h3>
+    </div>
+  </div>
+</ng-template>
