@@ -19,9 +19,6 @@ export class FhaListComponent implements OnInit {
 
 
   constructor(public fhaService: FhaService) {
-  }
-
-  ngOnInit() {
     this.fhaService.getMunicipiosList().subscribe(municipios => {
       this.municipios = municipios;
     });
@@ -36,6 +33,10 @@ export class FhaListComponent implements OnInit {
         }
       }
     });
+  }
+
+  ngOnInit() {
+
   }
 
   getForMunicipio() {

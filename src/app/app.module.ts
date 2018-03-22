@@ -31,6 +31,9 @@ import { InmoDetailComponent } from './components/inmo-detail/inmo-detail.compon
 import { ProyectosAddComponent } from './components/proyectos-add/proyectos-add.component';
 import { ProyectosListComponent } from './components/proyectos-list/proyectos-list.component';
 import { DropfilesDirective } from './directives/dropfiles.directive';
+import {AngularFireAuthModule} from 'angularfire2/auth';
+import { LoginComponent } from './login/login.component';
+import {AuthService} from './services/auth.service';
 
 
 @NgModule({
@@ -55,18 +58,21 @@ import { DropfilesDirective } from './directives/dropfiles.directive';
     InmoDetailComponent,
     ProyectosAddComponent,
     ProyectosListComponent,
-    DropfilesDirective
+    DropfilesDirective,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AngularFireModule.initializeApp(environment.firebase, 'inmobusinessgt'),
     AngularFireDatabaseModule,
+    AngularFireAuthModule,
     APP_ROUTES
   ],
   providers: [
     ClientsService,
-    FhaService
+    FhaService,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })
