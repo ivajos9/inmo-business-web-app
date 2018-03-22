@@ -3,30 +3,28 @@ import { Injectable } from '@angular/core';
 
 import { AngularFireDatabase } from 'angularfire2/database';
 import { Observable } from 'rxjs/Observable';
-import {FhaImmovable} from '../bo/FhaImmovable';
+import {FhaImmovable} from '../models/FhaImmovable';
+import {Municipio} from '../models/Municipio';
 
 @Injectable()
 export class FhaService {
   public fhaInmo: Observable<FhaImmovable[]>;
+  public municipios: Observable<Municipio[]>;
 
   constructor(private db: AngularFireDatabase) {
-    this.fhaInmo = this.getFhaInmo('/fha/immovables');
   }
 
-  getFhaInmo(listPath): Observable<any[]> {
+  getListByPath(listPath): Observable<any[]> {
     return this.db.list(listPath).valueChanges();
   }
 
   getFhaList() {
-    this.fhaInmo = this.getFhaInmo('/fha/immovables');
+    this.fhaInmo = this.getListByPath('/fha/immovables');
     return this.fhaInmo;
   }
-  // getClients() {
-  //   this.clients = this.db.list('/clients');
-  //   return this.clients;
-  // }
 
-  addInmoFha(fhaInmo: FhaImmovable) {
-    this.db.list('/fha/immovables').push(fhaInmo);
+  getMunicipiosList() {
+    this.municipios = this.getListByPath('/fha/locations-fha');
+    return this.municipios;
   }
 }

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { Client } from '../bo/client';
+import { Client } from '../models/Client';
 
 import { AngularFireDatabase } from 'angularfire2/database';
 import { Observable } from 'rxjs/Observable';
@@ -21,10 +21,6 @@ export class ClientsService {
     this.clients = this.getClients('clients');
     return this.clients;
   }
-  // getClients() {
-  //   this.clients = this.db.list('/clients');
-  //   return this.clients;
-  // }
 
   addClient(client: Client) {
     this.db.list('/clients/').push(client);

@@ -1,0 +1,112 @@
+<div class="jumbotron man-container">
+  <h1 class="display-5">Agregar Inmueble</h1>
+  <p class="lead">Agrega los datos del inmueble</p>
+  <hr>
+  <form>
+    <div class="form-row">
+      <div class="form-group col-md-4">
+        <label for="inputTipo">Tipo de Inmueble</label>
+        <select id="inputTipo" class="form-control">
+          <option>Apartamento</option>
+          <option>Bodega</option>
+          <option selected>Casa</option>
+          <option>Oficina</option>
+          <option>Terreno</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-4">
+        <label for="inputAddress">Address</label>
+        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-4">
+        <label for="inputDesc">Descripción</label>
+        <input type="text" class="form-control" id="inputDesc" placeholder="1234 Main St">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-4">
+        <label for="inputDetail">Detalle de Registro de la Propiedad</label>
+        <input type="text" class="form-control" id="inputDetail" placeholder="1234 Main St">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-4">
+        <label for="inputDepartamento">Departamento</label>
+        <select id="inputDepartamento" class="form-control">
+          <option selected>Choose...</option>
+          <option>...</option>
+        </select>
+      </div>
+      <div class="form-group col-md-4">
+        <label for="inputMunicipio">Municipio</label>
+        <select id="inputMunicipio" class="form-control">
+          <option selected>Choose...</option>
+          <option>...</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-2">
+        <label>
+          Precio
+        </label>
+        <input type="text" #precio="ngModel" name="dpi" [(ngModel)]="inmueble.price" class="form-control"
+               placeholder="Precio"
+               pattern="[0-9]+"/>
+      </div>
+      <div class="form-group col-md-2">
+        <label>
+          Area de Terreno
+        </label>
+        <input type="text" #areaTer="ngModel" name="dpi" [(ngModel)]="inmueble.fieldArea" class="form-control" placeholder=""
+               pattern="[0-9]+"/>
+      </div>
+      <div class="form-group col-md-2">
+        <label>
+          Area de Construcción
+        </label>
+        <input type="text" #areaCons="ngModel" name="dpi" [(ngModel)]="inmueble.consArea" class="form-control" placeholder=""
+               pattern="[0-9]+"/>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="col-md-4">
+        <label>Seleccione archivos</label>
+        <div appDropfiles [archivos]="archivos" (mouseSobre)="estaSobreDrop = $event" [ngClass]="{'file-over':estaSobreDrop}" class="well drop-zone">
+          <h6>Arrastre archivos a cargar</h6>
+          <img src="../../../assets/drop-images.png"/>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <table class="table table-sm">
+          <thead class="thead-dark">
+          <tr>
+            <th>Preview</th>
+            <th>Tamaño</th>
+            <th>Progreso</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let archivo of archivos">
+            <td [ngClass]="{'text-green': archivo.progreso >=100}">{{archivo.nombreArchivo}}</td>
+            <td>{{archivo.archivo.size / 1024 / 1024 | number: '.2-2'}} MB</td>
+            <td>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" [ngStyle]="{'width': archivo.progreso + '%'}"></div>
+              </div>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <br>
+
+    <button type="submit" class="btn btn-primary">Agregar</button>
+  </form>
+</div>

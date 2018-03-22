@@ -1,24 +1,7 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div id="content">
-  <header id="header">
-    <nav id="nav" class="col-lg-12">
-      <ul>
-        <li><a [routerLink]="['/home']" ><img src="../assets/logo1.png" width="130px" height="=80px"></a></li>
-        <li><a [routerLink]="['/home']" [routerLinkActive]="['activado']">Home</a></li>
-        <li><a [routerLink]="['/clients-list']" [routerLinkActive]="['activado']">Clientes</a></li>
-        <li><a [routerLink]="['/add-client']" [routerLinkActive]="['activado']">Agregar Cliente</a></li>
-        <li><a [routerLink]="['/inmo-list']" [routerLinkActive]="['activado']">Inmuebles</a></li>
-        <li><a [routerLink]="['/fha-list']" [routerLinkActive]="['activado']">Inmuebles FHA</a></li>
-      </ul>
-    </nav>
-  </header>
+<app-navbar></app-navbar>
+<router-outlet></router-outlet>
+<footer id="footer" class="col-lg-12">
+  <small> Inmo Business GT - Desarrollado por ID Solutions</small>
+</footer>
 
-  <section id="main" class="col-lg-12">
-    <!--componente actual-->
-    <router-outlet></router-outlet>
-  </section>
-  <footer id="footer" class="col-lg-12">
-    <p> Inmo Business GT  -  Desarrollado por ID Solutions </p>
-  </footer>
-</div>
 

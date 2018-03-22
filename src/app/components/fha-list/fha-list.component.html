@@ -1,0 +1,41 @@
+<div class="container-fluid main-container animated fadeIn fast">
+  <h1 class="display-4">Listado FHA</h1>
+  <p class="lead">Listado de casas disponibles</p>
+  <hr>
+
+  <table class="table table-responsive table-striped">
+    <thead class="thead-dark">
+    <tr class="text-center">
+      <th scope="col">Codigo</th>
+      <th scope="col">Dirección
+        <select [(ngModel)]="seleccionado" (ngModelChange)="getForMunicipio()">
+          <option value=""></option>
+          <option *ngFor="let x of municipios" value="{{x.name}}">{{x.name}}</option>
+        </select>
+      </th>
+      <th scope="col">Precio</th>
+      <th scope="col">Ambientes</th>
+      <th scope="col">Registro de Propiedad</th>
+      <th scope="col">Area de Terreno</th>
+      <th scope="col">Area de Construcción</th>
+      <th scope="col">Disponibilidad</th>
+    </tr>
+    </thead>
+    <tbody class="text-left">
+    <tr *ngFor="let fha of fhaDisp">
+      <th scope="row"><small><a [href]="fha.linkToGo">{{fha.code}}</a></small></th>
+      <td><small>{{fha.address}}</small></td>
+      <td><small>Q.{{fha.price | number}}.00</small></td>
+      <td><small>{{fha.environments}}</small></td>
+      <td><small>{{fha.propertyRegistry}}</small></td>
+      <td><small>{{fha.fieldArea}} m²</small></td>
+      <td><small>{{fha.consArea}} m²</small></td>
+      <td *ngIf="fha.available"><small><h6>Disponible</h6></small>
+        <button type="button" class="btn btn-success">Cotizar</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+

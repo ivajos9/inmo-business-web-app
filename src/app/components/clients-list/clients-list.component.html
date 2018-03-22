@@ -1,0 +1,34 @@
+<div class="container-fluid main-container animated fadeIn" >
+  <h4 class="display-4">Clientes</h4>
+  <p class="lead">Listado de clientes registrados</p>
+  <hr>
+  <div class="table-responsive-xl">
+    <table class="table table-striped">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">Nombres</th>
+        <th scope="col">Apellidos</th>
+        <th scope="col">E-Mail</th>
+        <th scope="col">Telefono Movil</th>
+        <th scope="col">Nit</th>
+        <th scope="col">Acciones</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let client of clients">
+        <td>{{client.names}}</td>
+        <td>{{client.lastNames}}</td>
+        <td>{{client.email}}</td>
+        <td>{{client.mobilePhone}}</td>
+        <td>{{client.nit}}</td>
+        <td>
+          <a href="#" class="secondary-content">
+            <i (click)="deleteClient($event, client)" class="fa fa-trash"></i>
+            <i (click)="editTask($event, client)" class="fa fa-pencil"></i>
+          </a>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

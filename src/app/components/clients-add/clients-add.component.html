@@ -1,0 +1,80 @@
+<div class="jumbotron animated fadeIn">
+  <h1 class="display-5">Crear Cliente</h1>
+  <p class="lead">Agrega los datos del cliente.</p>
+  <hr>
+  <form #formCliente="ngForm" (ngSubmit)="onSubmit()" id="form-cliente">
+    <div class="form-row">
+      <div class="form-group col-md-4">
+        <label>
+          Nombres *
+        </label>
+        <input type="text" #primerNombre="ngModel" name="primerNombre" [(ngModel)]="client.names"
+               class="form-control" placeholder="Nombres" required/>
+      </div>
+      <div class="form-group col-md-4">
+        <label>
+          Apellidos *
+        </label>
+        <input type="text" #primerApellido="ngModel" name="primerApellido" [(ngModel)]="client.lastNames"
+               class="form-control" placeholder="Apellidos" required/>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-2">
+        <label>
+          DPI
+        </label>
+        <input type="text" #dpi="ngModel" name="dpi" [(ngModel)]="client.dpi" class="form-control" placeholder="DPI"
+               pattern="[0-9]+"/>
+      </div>
+      <div class="form-group col-md-2">
+        <label>
+          NIT
+        </label>
+        <input type="text" #nit="ngModel" name="nit" [(ngModel)]="client.nit" class="form-control" placeholder="NIT"/>
+      </div>
+      <div class="form-group col-md-2">
+        <label>
+          Fecha de Nacimiento
+        </label>
+        <input type="date" #fechaNacimiento="ngModel" name="fechaNacimiento" id="fechaNacimiento"
+               [(ngModel)]="client.birthDate" class="form-control"/>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-4">
+        <label>
+          Correo Electronico *
+        </label>
+        <input type="email" #email="ngModel" name="email" [(ngModel)]="client.email" class="form-control"
+               placeholder="Correo Electronico" required/>
+      </div>
+      <div class="form-group col-md-2">
+        <label>
+          Telefono Móvil *
+        </label>
+        <input type="text" #movil="ngModel" name="movil" [(ngModel)]="client.mobilePhone" placeholder="Movil"
+               class="form-control"
+               required/>
+      </div>
+      <div class="form-group col-md-2">
+        <label>
+          Telefono Adicional
+        </label>
+        <input type="text" #movil2="ngModel" name="movil2" [(ngModel)]="client.aditionalPhone" placeholder="Adicional"
+               class="form-control"/>
+      </div>
+    </div>
+    <div class="form-row">
+    <div class="form-group col-md-5">
+      <label>
+        Dirección
+      </label>
+      <textarea #direccion="ngModel" name="direccion" [(ngModel)]="client.address" placeholder="Dirección"
+                class="form-control"></textarea>
+    </div>
+    </div>
+    <input type="submit" value="Agregar" [disabled]="!formCliente.form.valid" class="btn btn-success"/>
+
+  </form>
+</div>
