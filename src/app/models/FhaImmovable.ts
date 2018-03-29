@@ -9,6 +9,7 @@ export class FhaImmovable {
     public linkToGo,
     public price,
     public propertyRegistry,
-    public city
+    public city,
+    public images
   ) {}
 }

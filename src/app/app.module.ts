@@ -23,7 +23,7 @@ import {ErrorPageComponent} from './components/error-page/error-page.component';
 
 import {ClientsService} from './services/clients.service';
 import {FhaService} from './services/fha.service';
-import { NavbarComponent } from './components/navbar/navbar.component';
+import { NavbarComponent } from './shared/navbar/navbar.component';
 import { ProyectosComponent } from './components/proyectos/proyectos.component';
 import { NserviciosComponent } from './components/nservicios/nservicios.component';
 import { ContactoComponent } from './components/contacto/contacto.component';

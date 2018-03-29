@@ -1,61 +1,4 @@
 /* You can add global styles to this file, and also import other style files */
-#content{
-  border-radius: 5px;
-  background: white;
-  box-shadow: 0px 2px 5px #ccc;
-  padding: 0px;
-  overflow: hidden;
-}
-
-#header{
-  background: #005692 !important;
-  color: white;
-  margin: 0px;
-  height: 120px;
-  line-height: 90px;
-}
-
-#header h1{
-  display: block;
-  line-height: 50px;
-  font-weight: bold;
-  font-size: 30px;
-}
-#nav{
-  padding-top: 20px;
-  margin: 0px;
-  position: absolute;
-  background: #005692;
-
-}
-#nav ul{
-  margin: 0px;
-  list-style: none;
-  padding-left: 20px;
-}
-
-#nav ul li{
-  float: left;
-  margin-right: 10px;
-
-}
-
-#nav ul li a{
-  display: block;
-  color: white;
-  height: 30px;
-  line-height: 29px;
-  padding-left: 10px;
-  padding-right: 10px;
-  transition: all 300ms;
-  border-radius: 3px;
-}
-
-#nav ul li a:hover{
-  text-decoration: none;
-  background: #07ade0;
-}
-
 .activado{
   text-decoration: none !important;
   background: rgba(5, 78, 99, 0.67) !important;
@@ -70,7 +13,7 @@
   color: gray;
 }
 
-h6{
+.limegr{
   color: limegreen;
 }
 
@@ -79,11 +22,11 @@ h6red{
 }
 
 .main-container{
-  margin-top: 20px;
+  margin-top: 80px;
 }
 
 .man-container{
-  margin-left: 20px;
+  margin-left: 30px;
 }
 
 .animated {
@@ -133,5 +76,3 @@ h6red{
 .text-green {
   color: green
 }
-
-
